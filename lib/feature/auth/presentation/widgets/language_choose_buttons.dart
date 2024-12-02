@@ -14,15 +14,13 @@ class LanguageChooseButtons extends StatelessWidget {
         LanguageButton(
           language: 'English',
           onPressed: () {
-            BlocProvider.of<GlobalCubit>(context).isArabic = false;
-            BlocProvider.of<GlobalCubit>(context).changeLanguage();
+            BlocProvider.of<GlobalCubit>(context).changeLanguage('en');
           },
         ),
         LanguageButton(
             language: 'العربية',
             onPressed: () {
-              BlocProvider.of<GlobalCubit>(context).isArabic = true;
-              BlocProvider.of<GlobalCubit>(context).changeLanguage();
+              BlocProvider.of<GlobalCubit>(context).changeLanguage('ar');
             }),
       ],
     );
