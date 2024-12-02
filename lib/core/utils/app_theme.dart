@@ -1,6 +1,7 @@
 import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData getThemeData() {
   return ThemeData(
@@ -11,16 +12,24 @@ ThemeData getThemeData() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+            textStyle: TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 24.h,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
             backgroundColor: AppColors.KPrimaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.h),
             ))),
     textTheme:
         TextTheme(displayLarge: boldStyle(), displayMedium: regularStyle()),
     inputDecorationTheme: InputDecorationTheme(
-      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-      hintStyle: boldStyle(color: AppColors.KGreyColor, fontSize: 16),
+      enabledBorder:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(8.h)),
+      focusedBorder:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(8.h)),
+      hintStyle: boldStyle(color: AppColors.KGreyColor, fontSize: 16.h),
     ),
   );
 }

@@ -1,9 +1,11 @@
+import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_images.dart';
 import 'package:chef_app/core/utils/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:chef_app/core/utils/app_strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -40,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           SizedBox(height: 16.h),
           Text(
-            'Chef App',
+             AppStrings.chefApp.tr(context),
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
