@@ -1,5 +1,4 @@
 import 'package:chef_app/core/locale/app_locale.dart';
-import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_images.dart';
 import 'package:chef_app/core/utils/app_strings.dart';
 import 'package:chef_app/feature/auth/presentation/widgets/language_choose_buttons.dart';
