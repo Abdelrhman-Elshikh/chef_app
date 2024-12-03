@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => BlocBuilder<GlobalCubit, GlobalState>(
         builder: (context, state) {
           return MaterialApp.router(
+            
             localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,

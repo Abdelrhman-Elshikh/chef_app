@@ -1,14 +1,15 @@
 import 'package:chef_app/core/dataBase/api/end_points.dart';
 import 'package:equatable/equatable.dart';
 
-class LoginSuccessResponse extends Equatable {
+class LoginSuccessResponseModel extends Equatable {
   final String? message;
   final String? token;
 
-  const LoginSuccessResponse({this.message, this.token});
+  const LoginSuccessResponseModel.LoginSuccessResponseModel(
+      {this.message, this.token});
 
-  factory LoginSuccessResponse.fromJson(Map<String, dynamic> json) {
-    return LoginSuccessResponse(
+  factory LoginSuccessResponseModel.fromJson(Map<String, dynamic> json) {
+    return LoginSuccessResponseModel.LoginSuccessResponseModel(
       message: json[ApiKey.message] as String?,
       token: json[ApiKey.token] as String?,
     );

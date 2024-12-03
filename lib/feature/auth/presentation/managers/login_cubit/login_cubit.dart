@@ -1,3 +1,7 @@
+import 'dart:developer';
+
+import 'package:chef_app/core/dataBase/api/end_points.dart';
+import 'package:chef_app/core/dataBase/cache/cache_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:chef_app/core/services/service_locator.dart';
 import 'package:chef_app/feature/auth/data/repository/auth_repo_impl.dart';
@@ -35,7 +39,11 @@ class LoginCubit extends Cubit<LoginState> {
     result.fold((error) {
       emit(LoginFailureState(
           errorMessage: error.errorModel.errorMessage.toString()));
-    }, (response) {
+    }, (response) async {
+      log(response.toString());
+
+      await sl<CacheHelper>().saveData(key: ApiKey.token, value: response.token);
+
       emit(LoginSuccessState());
     });
   }

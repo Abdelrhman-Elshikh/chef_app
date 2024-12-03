@@ -4,13 +4,16 @@ import 'package:chef_app/core/locale/app_locale.dart';
 import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_images.dart';
 import 'package:chef_app/core/utils/app_strings.dart';
+import 'package:chef_app/core/utils/router/routes.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:chef_app/core/widgets/custom_loading_widget.dart';
-import 'package:chef_app/core/widgets/custom_text_field.dart';
+import 'package:chef_app/core/widgets/email_text_field.dart';
+import 'package:chef_app/core/widgets/password_text_field.dart';
 import 'package:chef_app/feature/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -62,49 +65,30 @@ class LoginBody extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          CustomTextField(
-                            isPassword: false,
-                            hintText: AppStrings.email.tr(context),
-                            keyboardType: TextInputType.emailAddress,
-                            controller: BlocProvider.of<LoginCubit>(context)
-                                .emailController,
-                            validator: (data) {
-                              if (data!.isEmpty ||
-                                  !data.contains('@gmail.com')) {
-                                return AppStrings.pleaseEnterValidEmail
-                                    .tr(context);
-                              }
-                              return null;
-                            },
-                          ),
+                          EmailTextField(
+                              controller: BlocProvider.of<LoginCubit>(context)
+                                  .emailController),
                           SizedBox(height: 32.h),
-                          CustomTextField(
+                          PasswordTextField(
                             hintText: AppStrings.password.tr(context),
-                            isPassword: BlocProvider.of<LoginCubit>(context)
-                                .isLoginPasswordHiding,
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                BlocProvider.of<LoginCubit>(context)
-                                    .changeLoginPasswordVisibility();
-                              },
-                              icon: Icon(BlocProvider.of<LoginCubit>(context)
-                                  .suffixIcon),
-                            ),
                             controller: BlocProvider.of<LoginCubit>(context)
                                 .passwordController,
-                            validator: (data) {
-                              if (data!.length < 6 || data.isEmpty) {
-                                return AppStrings.pleaseEnterValidPassword
-                                    .tr(context);
-                              }
-                              return null;
-                            },
+                            suffixIcon:
+                                BlocProvider.of<LoginCubit>(context).suffixIcon,
+                            isLoginPasswordHiding:
+                                BlocProvider.of<LoginCubit>(context)
+                                    .isLoginPasswordHiding,
+                            onPressedSuffixIcon:
+                                BlocProvider.of<LoginCubit>(context)
+                                    .changeLoginPasswordVisibility,
                           ),
                           SizedBox(height: 24.h),
                           Row(
                             children: [
                               TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context.push(Routes.KSendCode);
+                                  },
                                   child: Text(
                                     AppStrings.forgetPassword.tr(context),
                                     style: Theme.of(context)
