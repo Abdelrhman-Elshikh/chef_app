@@ -35,7 +35,8 @@ class AppStrings {
   static const String dontHaveAnAccount = 'dontHaveAnAccount';
   static const String checkMail = 'checkMail';
   static const String pleaseEnterValidCode = 'pleaseEnterValidCode';
-  static const String passwordChangedSuccessfully = 'PasswordChangedSuccessfully';
+  static const String passwordChangedSuccessfully =
+      'PasswordChangedSuccessfully';
   static const String pleaseEnterValidNumber = 'pleaseEnterValidNumber';
   static const String menu = 'menu';
   static const String profile = 'profile';

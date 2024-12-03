@@ -19,16 +19,19 @@ ThemeData getThemeData() {
               color: Colors.white,
             ),
             backgroundColor: AppColors.KPrimaryColor,
+            fixedSize: Size(327.w, 42.h),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.h),
             ))),
     textTheme:
         TextTheme(displayLarge: boldStyle(), displayMedium: regularStyle()),
     inputDecorationTheme: InputDecorationTheme(
-      enabledBorder:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(8.h)),
-      focusedBorder:
-          OutlineInputBorder(borderRadius: BorderRadius.circular(8.h)),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.h),
+          borderSide: BorderSide(color: AppColors.KGreyColor, width: 1.h)),
+      focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.h),
+          borderSide: BorderSide(color: AppColors.KGreyColor, width: 1.h)),
       hintStyle: boldStyle(color: AppColors.KGreyColor, fontSize: 16.h),
     ),
   );

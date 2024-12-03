@@ -1,3 +1,4 @@
+import 'package:chef_app/feature/auth/presentation/screens/login_screen.dart';
 import 'package:chef_app/feature/menu/presentation/screens/menu_home_screen.dart';
 import 'package:chef_app/feature/profile/presentation/screens/change_password_screen.dart';
 import 'package:chef_app/feature/profile/presentation/screens/profile_home_screen.dart';
@@ -17,7 +18,7 @@ class CustomRouter {
   static GoRouter router = GoRouter(routes: [
     GoRoute(
         path: Routes.KInitialRoute,
-        builder: (context, state) => const SplashScreen()),
+        builder: (context, state) => const LoginScreen()),
     GoRoute(
         path: Routes.KChangeLanguage,
         builder: (context, state) => const ChangeLanguageScreen()),
