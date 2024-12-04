@@ -10,11 +10,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: BlocProvider(
+      body: BlocProvider(
         create: (context) => sl<LoginCubit>(),
         child: const LoginBody(),
-      )),
+      ),
     );
   }
 }

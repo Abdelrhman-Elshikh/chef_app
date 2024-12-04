@@ -18,7 +18,7 @@ class GlobalCubit extends Cubit<GlobalState> {
   }
 
   void getCachedLanguages() async {
-    languageCode = await sl<CacheHelper>().getCachedLanguage();
+    languageCode = sl<CacheHelper>().getCachedLanguage();
     emit(GlobalInitial(languageCode));
   }
 }

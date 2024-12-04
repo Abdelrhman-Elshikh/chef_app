@@ -12,7 +12,6 @@ import 'package:chef_app/feature/auth/presentation/screens/change_language_scree
 import 'package:chef_app/feature/auth/presentation/screens/reset_password_screen.dart';
 import 'package:chef_app/feature/auth/presentation/screens/send_code_screen.dart';
 import 'package:chef_app/feature/menu/presentation/screens/add_meal_screen.dart';
-import 'package:chef_app/feature/auth/presentation/screens/splash_screen.dart';
 
 class CustomRouter {
   static GoRouter router = GoRouter(routes: [
